@@ -1,0 +1,340 @@
+Estrutura básica de uma página HTML
+A estrutura básica de uma página HTML pode ser vista na Listagem 1, na qual podemos ver as principais tags que são necessárias para que o documento seja corretamente interpretado pelos browsers.
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Document</title>
+</head>
+<body>
+<!-- Conteúdo -->
+</body>
+</html>
+Listagem 1. Estrutura básica de uma página HTML
+Linha 1: a instrução DOCTYPE deve ser sempre a primeira a aparecer em uma página HTML para indicar ao browser qual versão da linguagem usada. Nesse caso, estamos trabalhando com a HTML5, versão na qual a declaração do DOCTYPE é bastante simples, como podemos ver na listagem;
+
+Linhas 2 e 10: abertura e fechamento da tag html, que delimita o documento. Sendo assim, todas as demais tags da página devem estar nesse espaço;
+
+Linhas 3 e 6: abertura e fechamento da tag head, que define o cabeçalho do documento. O conteúdo nesse espaço não é visível no browser, mas contém instruções sobre seu conteúdo e comportamento. Dentro dessa tag, por exemplo, podem ser inseridas folhas de estilo e scripts;
+
+Linha 4: a tag meta, nesse caso, especifica qual conjunto de caracteres (character set ou charset) será usado para renderizar o texto da página. O UTF-8 contém todos os caracteres dos padrões Unicode e ASCII, sendo, portanto, o mais utilizado em páginas web. A mesma tag meta, porém com outros atributos, pode ser utilizada para outros fins, como na SEO (Search Engine Optimization);
+
+Linha 5: a tag title define o título da página, aquele que aparece na janela/aba do navegador;
+
+Linhas 7 e 9: abertura e fechamento da tag body, marcando o espaço no qual deve estar contido o conteúdo visual da página. As demais tags que representam texto, botões etc. devem ser adicionadas nesse intervalo;
+
+Linha 8: nessa linha podemos observar a sintaxe para adição de comentários em HTML. Esse trecho não é renderizado pelo browser.
+
+Para desenvolver páginas com HTML basicamente precisamos de um editor de texto, como o Bloco de Notas do Windows, Nano e Emacs no Linux, entre vários outros. Há, ainda, editores com opções avançadas, como recursos de syntax hilghligt e autocomplete, como Sublime Text, Atom, Brackets e Visual Studio Code, que podem ser usados para editar documentos HTML.
+
+Independentemente do editor utilizado, podemos simplesmente copiar o código da Listagem 1 para um deles e salvar o arquivo com extensão .html. Em seguida, podemos abrir esse arquivo em um browser.
+
+Tags do HTML
+Um documento HTML é composto por tags, as quais possuem um nome e aparecem entre os sinais < e >, como vimos na Listagem 1, por exemplo, em <html> e <head>. Naquele exemplo também vimos que algumas tags precisam ser abertas e fechadas, como em <body> </body>. Nesse caso, a tag de fechamento deve conter a barra / antes do nome. Outras, porém, não precisam ser fechadas, como a tag <meta>. Nesses casos, a adição da barra / no final da própria tag, como vemos na Linha 4 da Listagem 1 é opcional.
+
+
+Outro aspecto importante da linguagem é que ela é case insensitive, ou seja, não leva em consideração a diferença entre letras maiúsculas e minúsculas. No entanto, o uso apenas de letras minúsculas tem sido utilizado como padrão pelos desenvolvedores.
+
+Além dessas características, as tags também possuem atributos, como vemos na Linha 4 da Listagem 1, na qual a tag meta possui o atributo charset=”UTF-8”. Essas propriedades definem algumas características adicionais de cada tag e em alguns casos são obrigatórias. Seus valores devem aparecer entre aspas duplas, como no exemplo acima, ou em aspas simples, caso o próprio valor contenha aspas duplas.
+
+Cabeçalhos do HTML
+Cabeçalhos são normalmente utilizados para identificar páginas e seções e possuem aparência diferenciada do restante do texto. No HTML há seis níveis de cabeçalhos/títulos que podem ser utilizados por meio das tags h1, h2, h3, h4, h5 e h6, sendo h1 o maior/mais relevante e h6 o menor/menos relevante.
+
+De acordo com as regras de SEO, é recomendado que uma página possua apenas uma tag <h1> que indique seu assunto, pois essa tag informa aos motores de busca qual sua principal palavra-chave.
+Na Listagem 2 podemos ver como utilizar essas tags, e na Figura 1 temos o resultado desse código. Para testar esse código, basta copiá-lo para o espaço indicado na Linha 8 da Listagem 1 e salvar o documento com a extensão .html.
+
+<h1>Título de nível 1</h1>
+<h2>Título de nível 2</h2>
+<h3>Título de nível 3</h3>
+<h4>Título de nível 4</h4>
+<h5>Título de nível 5</h5>
+<h6>Título de nível 6</h6>
+Listagem 2. Diferentes níveis de cabeçalho
+Execute o código
+
+Diferentes níveis de cabeçalho
+Figura 1. Diferentes níveis de cabeçalho
+Parágrafos no HTML
+Parágrafos de texto são gerados na HTML por meio das tags <p> </p>. Esse é um exemplo de tag cuja disposição na tela se dá em forma de bloco, ou seja, um parágrafo é posto sempre abaixo do outro.
+
+O código da Listagem 3 adiciona três parágrafos, que podem ser visualizados na Figura 2.
+
+<p>Primeiro parágrafo do texto.</p>
+<p>Segundo parágrafo do texto.</p>
+<p>Terceiro parágrafo do texto.</p>
+Listagem 3. Adicionando parágrafos
+Execute o código
+
+Parágrafos visualizados na página
+Figura 2. Parágrafos visualizados na página
+Imagens no HTML
+A inserção de imagens em uma página HTML pode ser feita por meio da tag img, que recebe no atributo src o endereço do arquivo a ser carregado. Além desse, outros dois atributos importantes são o alt, que indica um texto alternativo que será exibido caso o arquivo não possa ser carregado, e title, que indica o texto que aparecerá como tooltip ao passar o mouse sobre a figura.
+
+O código da Listagem 4 insere uma imagem a partir do arquivo avatar.png, localizado na mesma pasta do arquivo HTML, e uma tag img apontando para um arquivo inexistente. Observe na Figura 3 que enquanto a primeira aparece corretamente, a segunda é exibida com um ícone de erro o texto alternativo que informamos. Note, ainda, que sobre a primeira figura está sendo exibido o tooltip definido no atributo title.
+
+<img src="avatar.png" alt="Texto alternativo" title="Avatar" />
+<img src="arquivo_inexistente.jpg" alt="Texto alternativo" title="Outra figura"/>
+Listagem 4. Inserindo imagem
+Execute o código
+
+Exemplos de uso da tag img
+Figura 3. Exemplos de uso da tag img
+No caso da tag img, ainda temos as tags figure e figcaption que serão abordadas no tópico de HTML Semântico, porém, a sua estrutura é simples e é representada pelo código abaixo:
+
+<figure>
+   <img src="http://meusite.com.br/assets/imagem.jpg" alt="Imagem">
+
+   <figcaption>Legenda da figura 1</figcaption>
+</figure>
+Listagem 4.1. Imagem com legenda
+Links no HTML
+Links são normalmente utilizados para direcionar o usuário para outras páginas, ou para outras partes da mesma página. Nos dois casos, utilizamos a tag a, que possui o atributo href no qual indicamos o destino daquele link.
+
+A Listagem 5 mostra como adicionar um link para outra página, neste caso, indicada pelo arquivo pagina2.html.
+
+<a href="pagina2.html">Página 2</a>
+Listagem 5. Inserindo link
+Já a Listagem 6 mostra como adicionar um link para um elemento na mesma página. Nesse caso, ao clicar no link o browser mudará o foco para o elemento que possui o atributo id igual àquele indicado no href.
+
+<a href="#paragrafo3">Ir para o parágrafo 3</a>
+<!--outros elementos-->
+<p id="paragrafo3">Parágrafo no rodapé.</p>
+Listagem 6. Inserindo link com id
+Note também que nesse caso o href requer ainda o sinal de cerquilha (#) antes do id do elemento que será o foco do link.
+
+Tabelas no HTML
+Tabelas são elementos utilizados com frequência para exibir dados de forma organizada em linhas e colunas. No HTML, elas são formadas por três tags básicas: table, para delimitar a tabela; tr, para indicar as linhas; e td para formar as colunas. A Listagem 7 mostra um exemplo simples de tabela com três linhas e duas colunas, e seu resultado pode ser visto na Figura 4.
+
+<table>
+<tr>
+<td>Linha 1, Coluna 1</td>
+<td>Linha 1, Coluna 2</td>
+</tr>
+<tr>
+<td>Linha 2, Coluna 1</td>
+<td>Linha 2, Coluna 2</td>
+</tr>
+<tr>
+<td>Linha 3, Coluna 1</td>
+<td>Linha 3, Coluna 2</td>
+</tr>
+</table>
+Listagem 7. Exemplo de uso de tabelas
+Execute o código
+
+Exemplo de tabela com três linhas e duas colunas
+Figura 4. Exemplo de tabela com três linhas e duas colunas
+Existem ainda outras três tags utilizadas para delimitar, de forma mais organizada, as partes da tabela: thead para o cabeçalho; tbody para o corpo; e tfoot para o rodapé. A Listagem 8 traz um exemplo de tabela mais complexa, utilizando todas as tags. Seu resultado é apresentado na Figura 5.
+
+<table>
+<thead>
+<tr>
+<th>Produto</th>
+<th>Preço</th>
+<th>Quantidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feijão</td>
+<td>R$ 8,75</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Arroz</td>
+<td>R$ 4,99</td>
+<td>2</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td>Total</td>
+<td></td>
+<td>R$ 18,73</td>
+</tr>
+</tfoot>
+</table>
+Listagem 8. Tabela com cabeçalho e rodapé
+Execute o código
+
+Tabela com cabeçalho e rodapé
+Figura 5. Tabela com cabeçalho e rodapé
+Por padrão, as tabelas não possuem bordas. Isso deve ser adicionado por meio das CSS.
+Listas no HTML
+Listas são elementos úteis para organizar e ordenar itens que estão relacionados de alguma forma. No HTML é possível criar três tipos de listas: ordenadas (com a tag ol), não ordenadas (com a tag ul), e de definição (por meio da tag dl).
+
+Na Listagem 9 temos um exemplo de lista ordenada, enquanto a Listagem 10 traz um exemplo de lista não ordenada. Em seguida, a Figura 6 mostra o resultado dos dois códigos. Observe que cada item das primeiras listas é definido pela tag li.
+
+<ol>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ol>
+Listagem 9. Lista ordenada
+Execute o código
+
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ul>
+Listagem 10. Lista não ordenada
+Execute o código
+
+Listas ordenada e não ordenada
+Figura 6. Listas ordenada e não ordenada
+No caso das listas ordenadas temos o atributo type que permite especificar o tipo de marcador a ser usado: números (padrão), números romanos ou letras.
+
+<ol type="I">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ol>
+Listagem 9.1. Lista ordenada por número romano maiúsculo
+Os valores permitidos para esse atributo são:
+
+1 - números (padrão)
+i - números romanos minúsculos
+I - números romanos maiúsculos
+a - letras minúsculas
+A - letras maiúsculas
+As listas de definição têm um comportamento um pouco diferente, uma vez que cada item é composto por um título (dt) e uma definição (dd), semelhante ao que ocorre em dicionários, nos quais temos os verbetes e suas definições. Na Listagem 11 temos um exemplo desse tipo de lista, com seu resultado ilustrado na Figura 7.
+
+<dl>
+<dt>Título 1</dt>
+<dd>Definição 1</dd>
+<dt>Título 2</dt>
+<dd>Definição 2</dd>
+<dt>Título 3</dt>
+<dd>Definição 3</dd>
+</dl>
+Listagem 11. Exemplo de lista de definição
+Execute o código
+
+Listas de definição
+Figura 7. Listas de definição
+Formulários no HTML
+Formulários são normalmente utilizados para integrar a página HTML a algum processamento no lado servidor. Nesses casos, a página envia dados para uma aplicação (Java, PHP, .NET etc.), que os recebe, trata e retorna algum resultado.
+
+No HTML, geralmente usamos a tag form para delimitar a área na qual se encontram os campos a serem preenchidos pelo usuário, a fim de serem enviados para processamento no back-end (enquanto a página HTML é chamada de front-end da aplicação).
+
+A Listagem 12 mostra um exemplo de formulário com vários tipos de campos para entrada de dados e um botão para submetê-los ao servidor. Na Figura 8 vemos seu resultado.
+
+<form action="salvar_dados.php" method="post">
+<input type="text" placeholder="Digite aqui"> <br/>
+<input type="checkbox">Checkbox <br/>
+<input type="radio">Radio button <br/>
+<input type="range"> <br/>
+<input type="submit" value="Enviar">
+</form>
+Listagem 12. Formulário com campos
+Execute o código
+
+HTML básico - códigos HTML
+Figura 8. Formulário para envio de dados
+Formatação de texto
+As tags de formatação de texto ajudam a destacar trechos da parte escrita da página, seja para fins de SEO ou por requisitos do conteúdo. Formatações como negrito e itálico podem ser aplicadas com facilidade utilizando as várias tags disponíveis para esse fim:
+
+b e strong para negrito/texto forte;
+i e em para itálico/ênfase;
+sup e sub para sobrescrito e subscrito, respectivamente;
+ins e del para indicar trechos que foram incluídos ou removidos, respectivamente;
+small para textos menores que o padrão;
+mark para texto destacado.
+Apesar da tag <b> e <strong> terem resultados visualmente idênticos, eles têm usos diferentes. A tag <b> deve ser utilizada quando quer se destacar algo que é apenas visual, como por exemplo, deixar um link com mais visível. A tag <strong> por sua vez, além de destacar o visual, dá um destaque semântico ao texto, então se o conteúdo que você quer dar destaque é uma parte relevante do texto, utilize a tag <strong>. O mesmo vale para as tags <i> e <em>, onde a tag <i> é utilizada apenas para formatação visual e a tag <em>dá ênfase semântica ao texto, não devendo ser utilizada para uso puramente estético.
+Na Listagem 13 vemos exemplos de uso dessas tags, e seu resultado pode ser observado em seguida, na Figura 9.
+
+<p>Texto em negrito com <b>bold</b> e <strong>strong</strong>.</p>
+<p>Texto em itálico com <i>italics<i> e <em>emphasis</em>.</p>
+<p>Texto <sup>sobrescrito</sup> e <sub>subscrito</sub>.</p>
+<p>Texto <ins>inserido</ins> e <del>excluído</del>.</p>
+<p>Texto <small>pequeno</small> e <mark>destacado</mark>.</p>
+Listagem 13. Tags de formatação de texto
+Execute o código
+
+Textos com formatação especial
+Figura 9. Textos com formatação especial
+Áudio no HTML
+Com HTML também é possível inserir áudio e vídeo nas páginas com facilidade. Para áudio, podemos utilizar a tag audio, da mesma forma que apresentada na Listagem 14.
+
+<audio controls src="musica.mp3" >
+Seu browser não suporta áudio.
+</audio>
+Listagem 14. Inserindo áudio
+Na tag audio, o atributo src aponta para o arquivo de áudio que será executado (MP3, OGG ou WAV). Já o atributo controls indica que devem ser exibidos os controles de gerenciamento do áudio (botões play, pause etc.). Além dele, outros também merecem destaque: autoplay, para fazer com que o áudio seja executado assim que for carregado; loop, para que o áudio seja executado repetidas vezes.
+
+Caso o browser não ofereça suporte a essa tag, o texto contido eu seu interior será exibido.
+Também podemos informar mais de um arquivo de áudio (opções alternativas de formato, por exemplo). Nesse caso, precisamos utilizar a tag source, como no exemplo da Listagem 15.
+
+<audio controls src="musica.mp3" >
+<source src="musica.ogg" type="audio/ogg">
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+Listagem 15. Inserindo áudio com a tag source
+Dessa vez, os arquivos serão buscados na ordem em que aparecem na lista. Caso um não seja localizado ou não possa ser carregado, o browser buscará imediatamente o próximo.
+
+A Figura 10 ilustra o resultado desses códigos, com o controle de áudio exibido no browser. Note também que no topo da janela (na aba do navegador) é exibido um ícone informando ao usuário que essa página está executando um áudio.
+
+HTML básico - códigos HTML
+Figura 10. Áudio em execução na página
+Vídeo no HTML
+Semelhante ao áudio, também podemos inserir vídeos nas páginas HTML utilizando a tag video, adicionada na HTML5, como na Listagem 16.
+
+<video src="video.mp4" width="640" height="480" controls>
+Seu browser não suporta vídeo HTML5.
+</video>
+Listagem 16. Inserindo vídeo
+Dessa vez, além dos atributos já vistos no áudio, também precisamos informar a largura (width) e a altura (height) do vídeo, a fim de mantê-lo adequado ao layout.
+
+O código da Listagem 17 pode ser utilizado quando desejarmos informar mais de um arquivo de vídeo como opções de carregamento, da mesma forma que vimos na tag audio. Nesse caso, os formatos suportados são MP4, WebM e Ogg.
+
+<video width="640" height="480" controls>
+<source src="video.webm" type="video/webm">
+<source src="video.mp4" type="video/mp4">
+</video>
+Listagem 17. Inserindo vídeo
+O resultado agora pode ser visto na Figura 11.
+
+Vídeo em execução na página
+Figura 11. Vídeo em execução na página
+Div e Span no HTML
+As tags div e span são duas das mais utilizadas no HTML, com objetivos distintos, porém com grande importância para a composição do layout das páginas e formatação do texto.
+
+As divs são normalmente utilizados para representarem containers para outros elementos, agrupando-os visualmente dentro de um bloco que pode conter dimensões e posição definidas. Por padrão, uma div não possui aparência características visuais definidas, isso precisa ser feito via CSS ao atribuir bordas, cores etc. Sua principal característica, no entanto, é que essa tag representa um elemento do tipo bloco, ou seja, que quando adicionado na página, automaticamente gera uma nova linha no layout (semelhante a um parágrafo), ao invés de ser alocado lateralmente nos demais componentes.
+
+O código da Listagem 18 demonstra um uso básico das divs.
+
+<input type="text" value="input 1">
+<input type="text" value="input 2">
+<div><input type="text" value="input 3"></div>
+<div><input type="text" value="input 4"></div>
+Listagem 18. Inserindo divs
+Execute o código
+
+Perceba no resultado da Figura 12 que, enquanto os dois primeiros inputs são dispostos lateralmente, os dois últimos aparecem um abaixo do outro, uma vez que estão dentro de divs diferentes.
+
+Exemplo de uso das DIVs
+Figura 12. Exemplos de uso das divs
+Já a tag span é um elemento do tipo inline, ou seja, quando adicionado na página, ele é inserido lateralmente após os demais componentes, diferente das divs que são elementos do tipo bloco.
+
+Elementos span, por padrão, também não possuem nenhuma característica visual definida, isso precisa ser feito via CSS para destacar ou aplicar uma formatação especial para um certo trecho do texto. Por exemplo, a Listagem 19 demonstra o uso do span em dois casos. No primeiro, a tag não conta com nenhum atributo adicional; no segundo, adicionamos a ela uma aparência diferenciada via CSS.
+
+<p>Este é um texto com um <span>
+trecho em destaque</span>.</p>
+<p>
+Este é um texto com um <span
+style="background: #1abc9c; border-radius:5px; padding:5px">
+trecho em destaque</span>.
+</p>
+Listagem 19. Trabalhando com span
+Execute o código
+
+O resultado pode ser visto na Figura 13 e, como esperado, no primeiro caso não conseguimos perceber nenhuma diferença visual devido ao uso do span.
+
+Exemplo de uso do SPAN
+Figura 13. Exemplo de uso do span
+Neste artigo vimos uma breve introdução à linguagem HTML, uma das bases do desenvolvimento web e que atualmente também vem sendo amplamente utilizada na criação de aplicativos mobile híbridos. Portanto, conhecer essa linguagem é fundamental para quem deseja desenvolver aplicações
+
+Tecnologias:
+HTML
